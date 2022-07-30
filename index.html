@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+    </script>
+</head>
+
+<body>
+
+<h1>Weather App</h1>
+    <form onsubmit="getWeather(); return false">
+        <label for="City">City</label>
+        <input type="text" required id="cityName" placeholder="City Name">
+        <button type="submit">Get Wheather</button>
+    </form>
+    <p id="location"></p>
+    <p id="last_updated"></p>
+    <p id="text"></p>
+    <span id="icon"></span>
+    <p id="temperature"></p>
+
+
+    <script>
+
+        function getWeather() {
+
+            let cityname = document.getElementById("cityName").value;
+
+            // Make a request for a user with a given ID
+            axios.get(`https://api.weatherapi.com/v1/current.json?key=77737b188d9148eaab345314223007&q=${cityname}&aqi=no`)
+                .then(function (response) {
+
+                    let Wheatherdata = response.data;
+
+
+                    document.querySelector("#location").innerHTML = `${Wheatherdata.location.name},${Wheatherdata.location.region},${Wheatherdata.location.country}`;
+
+                    document.querySelector("#last_updated").innerHTML = `${Wheatherdata.current.last_updated}`;
+                    document.querySelector("#text").innerHTML = `${Wheatherdata.current.condition.text}`;
+                    document.querySelector("#icon").innerHTML = `<img src="${Wheatherdata.current.condition.icon}" alt="">`;
+                    document.querySelector("#temperature").innerHTML = `${Wheatherdata.current.temp_c}C | ${Wheatherdata.current.temp_f}F`;
+                    
+                    // console.log(Wheatherdata.current.temp_c);
+                    // console.log(Wheatherdata.current.condition.icon);
+                    console.log(Wheatherdata);
+                    // console.log(Wheatherdata.current.last_updated);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+               
+
+            }
+    </script>
+</body>
+
+</html>
