@@ -1,4 +1,3 @@
-// function getWeather(e) {
 
   const getWeather = (e)  =>{
   let cityname = document.getElementById("cityName").value;
@@ -10,7 +9,7 @@
     )
     .then(function (response) {
       let Wheatherdata = response.data;
-
+      document.querySelector("#content").className ="content";
       document.querySelector(
         "#location"
       ).innerHTML = `${Wheatherdata.location.name} ${Wheatherdata.location.region} ${Wheatherdata.location.country}`;
@@ -77,13 +76,23 @@
           "#is_day"
         ).innerHTML = `Sanday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       }
+     
       
     })
+    
+
+   
     .catch(function (error) {
       // handle error
       console.log(error);
+      alert("PLease enter correct city name");
+      // document.querySelector(
+      //   "#error"
+      // ).innerHTML = `<b>PLease enter correct city name</b>`;
+    
     })
     .then(function () {
       // always executed
     });
 }
+
