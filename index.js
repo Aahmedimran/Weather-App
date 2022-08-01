@@ -91,7 +91,7 @@ console.log(day)
     //     ).innerHTML = `Saturday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
     //   }
 
-    git })
+   })
 
     .catch(function (error) {
       // handle error
