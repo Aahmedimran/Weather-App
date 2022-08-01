@@ -3,9 +3,10 @@
     padding: 0%;
     align-items: center;
     text-align: center;
+    
  
 }
-
+body{background-color: rgb(204, 203, 203);}
 h1{
     font-family: 'Roboto', sans-serif;
     padding: 30px;
@@ -25,6 +26,7 @@ input{
 } */
 
 input, select, textarea{
+    background-color: rgba(147, 233, 157, 1);
     color: black;
     font-weight: 900;
 }
@@ -33,6 +35,7 @@ button{
     border-radius: 30px;
     font-weight: bold;
 }
+
 button:hover{
     background-color: black;
     color: white;
@@ -44,7 +47,7 @@ button:hover{
 }
 
 .content{
-    
+    justify-content: center;
     display: inline-block;
     border: 2px solid black;
     padding: 20px;

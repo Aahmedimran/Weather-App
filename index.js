@@ -1,4 +1,6 @@
-function getWeather(e) {
+// function getWeather(e) {
+
+  const getWeather = (e)  =>{
   let cityname = document.getElementById("cityName").value;
 
   // Make a request for a user with a given ID
@@ -33,6 +35,10 @@ function getWeather(e) {
         "#temperature"
       ).innerHTML = `${Wheatherdata.current.temp_c} °C | ${Wheatherdata.current.temp_f} °F`;
 
+
+      document.querySelector(
+        "#humidity"
+      ).innerHTML = `Humidity ${Wheatherdata.current.humidity}%`;
       console.log(Wheatherdata);
 
 
@@ -44,32 +50,32 @@ function getWeather(e) {
 
         document.querySelector(
           "#is_day"
-        ).innerHTML = `Sunday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `Monday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       }
        else if (Wheatherdata.current.is_day === 2) {
         document.querySelector(
           "#is_day"
-        ).innerHTML = `Monday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `Tuesday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       } else if (Wheatherdata.current.is_day === 3) {
         document.querySelector(
           "#is_day"
-        ).innerHTML = `Tuesday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `wednsday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       } else if (Wheatherdata.current.is_day === 4) {
         document.querySelector(
           "#is_day"
-        ).innerHTML = `wednsday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `Thersday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       } else if (Wheatherdata.current.is_day === 5) {
         document.querySelector(
           "#is_day"
-        ).innerHTML = `Thersday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `Friday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       } else if (Wheatherdata.current.is_day === 6) {
         document.querySelector(
           "#is_day"
-        ).innerHTML = `Friday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `Saturday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       } else if (Wheatherdata.current.is_day === 7) {
         document.querySelector(
           "#is_day"
-        ).innerHTML = `Saturday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
+        ).innerHTML = `Sanday${Wheatherdata.location.localtime[10]}${Wheatherdata.location.localtime[11]}${Wheatherdata.location.localtime[12]}${Wheatherdata.location.localtime[13]}${Wheatherdata.location.localtime[14]}${Wheatherdata.location.localtime[15]}`;
       }
       
     })
