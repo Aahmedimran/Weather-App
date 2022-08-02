@@ -4,11 +4,11 @@
     align-items: center;
     text-align: center;
     
+    font-family: 'Roboto', sans-serif;
  
 }
 body{background-color: rgb(204, 203, 203);}
 h1{
-    font-family: 'Roboto', sans-serif;
     padding: 30px;
 }
 label{
@@ -40,6 +40,19 @@ button:hover{
     background-color: black;
     color: white;
 }
+.location{
+    font-weight: 900;
+    background-color: rgb(7, 252, 68);
+    padding: 5px 10px 5px 50px;
+    /* padding-right: 5px;
+    padding-left: 50px; */
+    border-radius: 16px;
+    margin-bottom: 10px;
+}
+#last_updated,#is_day,#temperature,#text,#humidity{
+    font-weight: bold;
+}
+
 .icon{
     display: flex;
     justify-content: center;
@@ -60,8 +73,4 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(20px);
 -webkit-backdrop-filter: blur(20px);
 border: 1px solid rgba(147, 233, 157, 0.71);
-}
-.location{
-    border-bottom: 2px solid blue;
-    padding-left: 50px;
 }
