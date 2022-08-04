@@ -7,6 +7,7 @@ const getWeather = (e) => {
     )
     .then(function (response) {
       let Wheatherdata = response.data;
+let time = Wheatherdata.location.localtime;
 
       document.querySelector("#content").className = "content";
       document.querySelector("#location").className = "location";
@@ -17,7 +18,7 @@ const getWeather = (e) => {
 
       document.querySelector(
         "#last_updated"
-      ).innerHTML = `${Wheatherdata.location.localtime}`;
+      ).innerHTML = `${moment(time).format('Do MMMM YYYY, h:mm:ss a')}`;
 
 
       // document.querySelector(
@@ -48,10 +49,13 @@ const getWeather = (e) => {
 
       const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-      const d = new Date(Wheatherdata.location.localtime);
+      const d = new Date();
+      
       let day = weekday[d.getDay()];
+     
 
-          //console.log(day)
+
+         
       document.querySelector(
         "#is_day"
       ).innerHTML = ` ${day}`;
